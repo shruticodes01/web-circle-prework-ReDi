@@ -74,11 +74,11 @@ const MenuItemDetails = () => {
       <div className="flex justify-between items-center gap-8 p-2">
         <h1>{meal.strMeal}</h1>
         <button
-          className="w-full max-w-fit inline-flex justify-self-end"
+          className="w-full max-w-fit inline-flex justify-self-end shrink-0 cursor-pointer"
           onClick={() => onFavorite(meal)}
         >
           <Heart
-            className={`${isFavorite(meal.idMeal) ? "fill-red-600" : "fill-white"}`}
+            className={`${isFavorite(meal.idMeal) ? "fill-red-600" : "fill-white"} md:w-8 md:h-8`}
           />
         </button>
       </div>

@@ -7,10 +7,13 @@ export default function Wishlist() {
   const navigate = useNavigate();
   return (
     <section className="flex flex-col gap-4 max-md:px-2 max-md:py-4 md:py-10 md:px-10">
-      <button className="cursor-pointer" onClick={() => navigate("/")}>
+      <button
+        className="inline-flex cursor-pointer"
+        onClick={() => navigate("/")}
+      >
         <ArrowLeft />
       </button>
-      <ul className="w-full flex flex-wrap list-none">
+      <ul className="flex flex-wrap gap-4 list-none">
         {favorites.map((favDish) => (
           <li key={favDish.idMeal}>
             <MenuItem dish={favDish} />

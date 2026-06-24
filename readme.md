@@ -12,7 +12,6 @@ As a bonus, we'd really like to have a wishlist feature, where users can add (an
 - If you need a reminder on a certain syntax, it's fine to ask the screener, or use your preferreed search engine for a reminder.
 - It's good to ask questions! If there's anything at all you're not sure about, your screener will be happy to help.
 
-
 ## Cloning the Repository
 
 ```
@@ -32,3 +31,9 @@ Then, you can run your development server and access your application via browse
 ```
   npm run dev
 ```
+
+# web-circle-exercise
+
+- Completed the search functionality
+- Created a wishlist component to display favorite products.
+- Used ContextAPI to display and toggle favorite products and store favorites in the localstorage.

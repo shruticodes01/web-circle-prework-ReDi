@@ -13,7 +13,7 @@ const MenuItem = ({ dish }) => {
       <div className="flex justify-between items-center">
         <h3>{name}</h3>
         <button
-          className="inline-flex cursor-pointer pr-4"
+          className="inline-flex cursor-pointer px-4 shrink-0"
           onClick={() => onFavorite(dish)}
         >
           <Heart

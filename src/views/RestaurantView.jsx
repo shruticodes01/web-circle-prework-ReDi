@@ -60,7 +60,7 @@ const RestaurantView = () => {
   // This is especially important when using more controlled techniques like debouncing
   useEffect(debouncedEffectHook, [debouncedEffectHook, search]);
 
-  const handleChange = (e) => {
+  const handleInput = (e) => {
     setSearch(e.target.value);
   };
 
@@ -69,11 +69,11 @@ const RestaurantView = () => {
       <NavBar>
         <h1>ReDI React Restaurant</h1>
 
-        <SearchField onSearch={handleChange} search={search} />
-        <div>
-          <Link to="/wishlist">Wishlist</Link>
-          <span>({favorites.length})</span>
-        </div>
+        <SearchField onSearch={handleInput} search={search} />
+
+        <Link className="flex gap-1" to="/wishlist">
+          Wishlist<span className="font-semibold">({favorites.length})</span>
+        </Link>
       </NavBar>
 
       <div className={styles.restaurantWrapper}>
