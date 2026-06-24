@@ -4,13 +4,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../Button/Button";
 
 import styles from "./MenuItem.module.css";
-
+import { useFavorites } from "../../store/FavoriteContext/useFavorites";
+import { Heart } from "lucide-react";
 
 const MenuItemDetails = () => {
   // Hold a temporary value for meal until we fetch the real data. Show a loading message while it's null
   const [meal, setMeal] = useState(null);
   // Hold a boolean value for error in case we run into an error while fetching to give the user feedback and redirect back home
   const [error, setError] = useState(false);
+
+  const { isFavorite, onFavorite } = useFavorites();
 
   // Hooks from react-router-dom
   const navigate = useNavigate();
@@ -68,7 +71,18 @@ const MenuItemDetails = () => {
   return (
     <div className={styles.menuItemDetail}>
       <Button onClick={() => navigate("/")}>return Home</Button>
-      <h1>{meal.strMeal}</h1>
+      <div className="flex justify-between items-center gap-8 p-2">
+        <h1>{meal.strMeal}</h1>
+        <button
+          className="w-full max-w-fit inline-flex justify-self-end"
+          onClick={() => onFavorite(meal)}
+        >
+          <Heart
+            className={`${isFavorite(meal.idMeal) ? "fill-red-600" : "fill-white"}`}
+          />
+        </button>
+      </div>
+
       <img
         src={meal.strMealThumb}
         alt={meal.strMeal}
